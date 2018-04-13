@@ -24,94 +24,92 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from "vuex";
+import { mapState, mapGetters, mapMutations } from 'vuex'
 export default {
-	computed: {
-		...mapState('index', [
-			'indexActive',
-			'indexColumn'
-		]),
-		...mapGetters('index', [
-			'activeMeta'
-		])
-	},
-	watch: {
-		indexActive() {
-			this.slideTo(this.activeMeta.index);
-		}
-	},
-	methods: {
-		...mapMutations('index', ['set_indexActive']),
-		slideTo(index) {
-			//vue api-$nextTick 等数据变化，dom更新之后调用
-			this.$nextTick(()=>{
-				
-			})
-		},
-		scrollRecover() {
-
-		},
-		navClick(type) {
-			this.set_indexActive(type);
-		},
-		goTo() {
-			$(`#indx .$(this.indexActive)`).animate({scrollTop: 0})
-		}
-	}
+  computed: {
+    ...mapState('index', ['indexActive', 'indexColumn']),
+    ...mapGetters('index', ['activeMeta'])
+  },
+  watch: {
+    indexActive() {
+      this.slideTo(this.activeMeta.index)
+    }
+  },
+  methods: {
+    ...mapMutations('index', ['set_indexActive']),
+    slideTo(index) {
+      // vue api-$nextTick 等数据变化，dom更新之后调用
+      this.$nextTick(() => {})
+    },
+    scrollRecover() {},
+    navClick(type) {
+      this.set_indexActive(type)
+    },
+    goTo() {
+      $(`#indx .$(this.indexActive)`).animate({ scrollTop: 0 })
+    }
+  }
 }
 </script>
 
 
 <style lang='stylus'>
-	#indexHeader {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 999;
-		overflow: hidden;
-		header {
-			height: 44px;
-			background-color: #00939c;
-			.top_bar {
-				position: relative;
-				height: 44px;
-			}
+#indexHeader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	overflow: hidden;
 
-			.abs_l, .abs_m, .abs_r {
-				position: absolute;
-				top: 0;
-				width: 44px;
-				height: 100%;
-				text-align: center
-			}
-			.abs_l {
-				left: 0;
-				z-index: 1000;
-			}
-			.abs_m {
-				width: 100%;
-				z-index: 999;
-			}
-			.abs_r {
-				right: 0;
-				z-index: 1000;
-			}
-			a.title {
-				display: inline-block;
-				background-size: 145px;
-				width: 100px;
-				height: 44px;
-				background: url('~@/assets/img/news_logo.png') no-repeat center center;
-				background-size: contain;
-			}
-			a.search_btn {
-				display: inline-block;
-				width: 100%;
-				height: 100%;
-				background: url('~@/assets/img/search.png')no-repeat center center;
-				background-size: 24px;
-			}
+	header {
+		height: 44px;
+		background-color: #00939c;
+
+		.top_bar {
+			position: relative;
+			height: 44px;
+		}
+
+		.abs_l, .abs_m, .abs_r {
+			position: absolute;
+			top: 0;
+			width: 44px;
+			height: 100%;
+			text-align: center;
+		}
+
+		.abs_l {
+			left: 0;
+			z-index: 1000;
+		}
+
+		.abs_m {
+			width: 100%;
+			z-index: 999;
+		}
+
+		.abs_r {
+			right: 0;
+			z-index: 1000;
+		}
+
+		a.title {
+			display: inline-block;
+			background-size: 145px;
+			width: 100px;
+			height: 44px;
+			background: url('~@/assets/img/news_logo.png') no-repeat center center;
+			background-size: contain;
+		}
+
+		a.search_btn {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			background: url('~@/assets/img/search.png') no-repeat center center;
+			background-size: 24px;
 		}
 	}
+}
 </style>
