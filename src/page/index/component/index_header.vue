@@ -111,5 +111,74 @@ export default {
 			background-size: 24px;
 		}
 	}
+
+	nav {
+		position: relative;
+		height: 36px;
+		line-height: 36px;
+		background-color: #f4f5f6;
+		border-bottom: 1px solid #ddd;
+
+		/* 更多栏目 */
+		/* padding-right: 40px; */
+		.nav_ul {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			white-space: nowrap;
+			font-size: 0;
+
+			&::-webkit-scrollbar {
+				width: 0px;
+				height: 0px;
+			}
+
+			a {
+				display: inline-block;
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-left: 5px;
+				height: 36px;
+				line-height: 36px;
+				font-size: 17px;
+				color: #505050;
+				white-space: nowrap;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+				text-decoration: none;
+
+				&:last-child {
+					margin-right: 5px;
+				}
+
+				&.active {
+					color: #00939c;
+					border-bottom: 2px solid #00939c;
+				}
+			}
+		}
+
+		.nav_menu {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+
+			.shadow {
+				position: absolute;
+				width: 10px;
+				height: 100%;
+				left: -10px;
+				background-size: contain;
+				background-color: rgba(244, 245, 246, 0.3);
+			}
+
+			.more_btn {
+				display: block;
+				width: 40px;
+				height: 100%;
+				background-size: 20px;
+				background-color: #f4f5f6;
+			}
+		}
+	}
 }
 </style>

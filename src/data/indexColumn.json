@@ -1,0 +1,32 @@
+{
+    "_meta": {
+        "hint": "OK",
+        "response_status": "200",
+        "spent_time": "182ms",
+        "log_id": "9b5db75e-3d87-415e-8375-c4c450a96175",
+        "serverName": "Adpanstg81.morningstar.com",
+        "status": 200
+    },
+    "data": [
+        {
+            "classname": "推荐",
+            "classid": 0,
+            "classpath": "__all__"
+        },
+        {
+            "classname": "热点",
+            "classid": 1,
+            "classpath": "news_hot"
+        },
+        {
+            "classname": "社会",
+            "classid": 2,
+            "classpath": "news_society"
+        },
+        {
+            "classname": "娱乐",
+            "classid": 3,
+            "classpath": "news_entertainment"
+        }
+    ]
+}
